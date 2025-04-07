@@ -1,0 +1,1680 @@
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Hanken Grotesk Bold';
+    src: url('assets/images/HankenGrotesk-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Hanken Grotesk Regular';
+    src: url('assets/images/HankenGrotesk-Regular.otf') format('opentype');
+} 
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #0F0F11;
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 头部样式 */
+header {
+    padding: 20px 0;
+    position: relative;
+    font-family: 'Hanken Grotesk Regular', sans-serif;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.site-name {
+    font-size: 23px;
+    font-weight: 700;
+    color: #0F0F11;
+}
+
+/* 导航样式 */
+.nav-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navigation {
+    display: flex;
+    background-color: #f5f5f7;
+    border-radius: 30px;
+    padding: 8px;
+    gap: 8px;
+}
+
+.nav-item {
+    color: #0F0F11;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.nav-item.active, .nav-item:hover {
+    background-color: #ffffff;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.07);
+}
+
+/* 按钮样式 */
+.header-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 17px;
+    border-radius: 300px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-outline {
+    border: 2px solid #cae38b;
+    color: #0F0F11;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: #cae38b;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(203, 227, 139, 0.2);
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #cae38b 0%, #8bc4e3 100%);
+    color: #0F0F11;
+    border: none;
+    box-shadow: 0 4px 15px rgba(203, 227, 139, 0.2);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #b8d277 0%, #7ab3d2 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(203, 227, 139, 0.3);
+}
+
+.btn-large {
+    padding: 12px 25px;
+}
+
+/* Hero 部分样式 */
+.hero {
+    display: flex;
+    padding: 130px 0 0 0;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+    font-family: 'Hanken Grotesk Regular', sans-serif;
+}
+
+.hero-image {
+    flex: 1;
+    background-image: url('assets/images/image-1.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 500px;
+    position: relative;
+}
+
+.hero-image::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    transform: translateY(-50%);
+    background: radial-gradient(circle, rgba(202, 227, 139, 0.15) 0%, rgba(202, 227, 139, 0.05) 40%, rgba(255, 255, 255, 0) 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hero-image::after {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: -50px;
+    width: 300px;
+    height: 300px;
+    transform: translateY(-30%);
+    background: radial-gradient(circle, rgba(139, 196, 227, 0.15) 0%, rgba(139, 196, 227, 0.05) 40%, rgba(255, 255, 255, 0) 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #cae38b 0%, #8bc4e3 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+.hero h2 {
+    font-family: 'Hanken Grotesk Bold', sans-serif;
+    font-size: 4.3rem;
+    margin-bottom: 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Hanken Grotesk Bold', sans-serif;
+}
+
+p, div {
+    font-family: 'Hanken Grotesk Regular', sans-serif;
+}
+
+/* 固定导航栏的样式 */
+.nav-fixed {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Build On 部分样式 */
+.build-on {
+    text-align: center;
+    padding: 80px 0 40px;
+}
+
+.build-on-title {
+    font-size: 14px;
+    color: #666;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.marquee-container {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.marquee-container::before,
+.marquee-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    z-index: 2;
+}
+
+.marquee-container::before {
+    left: 0;
+    background: linear-gradient(90deg, #fff 0%, transparent 100%);
+}
+
+.marquee-container::after {
+    right: 0;
+    background: linear-gradient(270deg, #fff 0%, transparent 100%);
+}
+
+.marquee {
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+
+.marquee-item {
+    flex: 0 0 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.marquee-item img {
+    height: 130px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.marquee-item img:hover {
+    opacity: 1;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Banner 部分样式 */
+.banner {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #cae38b 0%, #8bc4e3 100%);
+    padding: 80px 0;
+    margin-top: 60px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('assets/images/grid-pattern.png');
+    background-size: cover;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/images/overlay.png');
+    background-position: bottom center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 1;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.banner .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.banner-content {
+    max-width: 50%;
+    color: #0F0F11;
+    position: relative;
+    z-index: 2;
+}
+
+.banner-title {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: #0F0F11;
+}
+
+.banner-description {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.banner .btn-primary {
+    background: #ffffff;
+    color: #0F0F11;
+    border: none;
+}
+
+.banner .btn-primary:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+    .banner-content {
+        max-width: 100%;
+    }
+}
+
+/* 全局水波纹效果 */
+.ripple-container {
+    position: fixed; /* 改为固定定位，覆盖整个视口 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000; /* 确保在其他元素上方但不影响交互 */
+}
+
+.ripple {
+    position: absolute;
+    width: 150px; /* 增大初始尺寸 */
+    height: 150px;
+    border-radius: 50%;
+    background: rgba(202, 227, 139, 0.3); /* 降低透明度使效果更微妙 */
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple-animation 3s ease-out forwards; /* 延长动画时间 */
+}
+
+@keyframes ripple-animation {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(4); /* 增大最终尺寸 */
+        opacity: 0;
+    }
+}
+
+/* 核心功能部分样式 */
+.features {
+    padding: 100px 0 50px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.features-layout {
+    display: flex;
+    gap: 80px;
+}
+
+.features-intro {
+    flex: 0 0 35%;
+    position: sticky;
+    top: 100px;
+    align-self: flex-start;
+    height: fit-content;
+    margin-top: 0;
+}
+
+.subtitle {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+    background: linear-gradient(90deg, #cae38b 0%, #8bc4e3 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.features-title {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.features-cards {
+    flex: 0 0 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: relative;
+    padding-top: 0;
+}
+
+.feature-card {
+    background-color: #f5f5f7;
+    border-radius: 24px;
+    padding: 32px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.feature-card:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.feature-card:first-child {
+    z-index: 1;
+}
+
+.feature-card:last-child {
+    z-index: 2;
+}
+
+.feature-icon {
+    margin-bottom: 24px;
+}
+
+.feature-title {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+}
+
+.feature-description {
+    color: #555;
+    line-height: 1.7;
+}
+
+@media (max-width: 992px) {
+    .features-layout {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .features-intro, .features-cards {
+        flex: 0 0 100%;
+    }
+}
+
+/* How It Works 部分样式 */
+.how-it-works {
+    padding: 100px 0;
+    background-color: #ffffff;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.cards-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.cards-row:last-child {
+    margin-bottom: 0;
+}
+
+.card {
+    background: #f5f5f7;
+    border-radius: 24px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-large {
+    flex: 0 0 calc(66.666% - 12px);
+}
+
+.card-small {
+    flex: 0 0 calc(33.333% - 12px);
+}
+
+.card-equal {
+    flex: 0 0 calc(33.333% - 16px);
+}
+
+.image-container {
+    background: rgba(203, 227, 139, 0.1);
+    border-radius: 16px;
+    min-height: 200px;
+    margin-bottom: 24px;
+}
+
+.card-image-top {
+    order: -1;
+}
+
+.card-image-bottom {
+    order: 1;
+    margin-top: 24px;
+    margin-bottom: 0;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    color: #0F0F11;
+}
+
+.card p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
+
+.card-content {
+    flex: 1;
+}
+
+@media (max-width: 992px) {
+    .cards-row {
+        flex-direction: column;
+    }
+
+    .card-large,
+    .card-small,
+    .card-equal {
+        flex: 0 0 100%;
+    }
+}
+
+/* 修改图片容器样式 */
+/* 1. AI分析图片容器 */
+.image-container-analysis {
+    background-image: url('assets/images/image-2.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent; /* 移除背景颜色 */
+    border-radius: 0; /* 移除圆角 */
+    min-height: 170px;
+    margin-bottom: 50px;
+}
+
+/* 2. 上传内容图片容器 */
+.image-container-upload {
+    background-image: url('assets/images/image-3.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent; /* 移除背景颜色 */
+    border-radius: 0; /* 移除圆角 */
+    min-height: 200px;
+}
+
+/* 3. Why Choose Us 图片容器 */
+.why-image {
+    flex: 0 0 45%;
+    background-image: url('assets/images/image-why.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent; /* 移除背景颜色 */
+    border-radius: 0; /* 移除圆角 */
+    min-height: 700px;
+}
+
+/* Why Choose 部分样式 */
+.why-choose {
+    padding: 100px 0;
+    background-color: #ffffff;
+}
+
+.why-layout {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+}
+
+.why-content {
+    flex: 0 0 45%;
+}
+
+.why-content .section-title {
+    display: none;
+}
+
+.why-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.why-item {
+    display: flex;
+    gap: 16px;
+}
+
+.decorator {
+    display: flex;
+    padding: 15px 0 0 0;
+    gap: 4px;
+}
+
+.line {
+    width: 20px;
+    height: 6px;
+    background: linear-gradient(90deg, #cae38b 0%, #8bc4e3 100%);
+    border-radius: 300px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background: linear-gradient(90deg, #cae38b 0%, #8bc4e3 100%);
+    border-radius: 50%;
+}
+
+.item-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    color: #0F0F11;
+}
+
+.item-content p {
+    color: #555;
+    line-height: 1.7;
+}
+
+@media (max-width: 992px) {
+    .why-layout {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .why-image,
+    .why-content {
+        flex: 0 0 100%;
+    }
+
+    .why-image {
+        min-height: 300px;
+    }
+}
+
+/* Tokenomics 部分样式 */
+.tokenomics {
+    padding: 100px 0;
+    background-color: #ffffff;
+}
+
+.tokenomics .section-title {
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.tokenomics-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.tokenomics-row:last-child {
+    margin-bottom: 0;
+}
+
+.token-item {
+    background: #f5f5f7;
+    border-radius: 24px;
+    padding: 32px;
+}
+
+.token-item-small {
+    flex: 0 0 calc(25% - 18px);
+    min-height: 200px;
+}
+
+.token-item-large {
+    flex: 0 0 calc(50% - 12px);
+}
+
+.token-item-empty {
+    background: rgba(203, 227, 139, 0.1);
+}
+
+.token-item .section-title {
+    text-align: left;
+    margin-bottom: 32px;
+    font-size: 2.8rem;
+}
+
+.token-utilities {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.utility-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    color: #0F0F11;
+}
+
+.utility-item p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+.token-item-inner {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 32px;
+    width: 100%;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.token-item-inner h2 {
+    font-size: 2rem;
+    margin-bottom: 24px;
+    color: #0F0F11;
+}
+
+.token-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.token-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.token-detail:last-child {
+    border-bottom: none;
+    margin-bottom: 15px;
+}
+
+.token-detail .label {
+    color: #555;
+    font-weight: 500;
+}
+
+.token-detail .value {
+    color: #0F0F11;
+    font-weight: 600;
+}
+
+@media (max-width: 992px) {
+    .tokenomics-row {
+        flex-direction: column;
+    }
+
+    .token-item-small,
+    .token-item-large {
+        flex: 0 0 100%;
+    }
+
+    .token-item-empty {
+        display: none;
+    }
+}
+
+/* 增大Tokenomics的上间距 */
+.tokenomics .section-title {
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+/* 增大Total Supply的下间距 */
+.token-detail:last-child {
+    margin-bottom: 15px;
+}
+
+/* 重新设计翻转卡片效果 */
+.tokenomics-row:last-child .token-item-large .token-item-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    min-height: 450px;
+}
+
+.tokenomics-row:last-child .token-item-large .token-item-inner:hover {
+    transform: rotateY(180deg);
+}
+
+/* 修复正面和背面的共同样式 */
+.token-item-inner-front, .token-item-inner-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    padding: 32px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+/* 确保内容居中并且不会溢出 */
+.token-item-inner-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 背面翻转角度 */
+.token-item-inner-back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 40px;
+    overflow: visible;
+}
+
+/* 确保滚动条在内容溢出时显示 */
+.token-allocation {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: visible;
+    max-height: none;
+}
+
+/* Roadmap 部分样式 */
+.roadmap {
+    padding: 100px 0;
+    background-color: #ffffff;
+}
+
+.roadmap .section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.roadmap-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.roadmap-item {
+    height: 700px; /* 增加高度以适应内容 */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.roadmap-content {
+    padding-bottom: 40px;
+}
+
+/* 恢复文字内容样式 */
+.roadmap-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #0F0F11;
+}
+
+/* Phase标题样式 */
+.roadmap-content .phase-title {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    background: linear-gradient(90deg, #cae38b 0%, #8bc4e3 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.roadmap-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.roadmap-content li {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.roadmap-content li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, #cae38b 0%, #8bc4e3 100%);
+    border-radius: 50%;
+}
+
+.roadmap-content li:last-child {
+    margin-bottom: 0;
+}
+
+.roadmap-image {
+    height: 280px;
+    background: #f5f5f7;
+    border-radius: 24px;
+    position: absolute; /* 使用绝对定位确保底部对齐 */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.5s ease;
+}
+
+/* 第二个和第四个卡片的特殊样式 */
+.roadmap-item:nth-child(2),
+.roadmap-item:nth-child(4) {
+    cursor: pointer;
+}
+
+.roadmap-item:nth-child(2) .roadmap-content,
+.roadmap-item:nth-child(4) .roadmap-content {
+    opacity: 0;
+    visibility: hidden; /* 添加visibility确保完全隐藏 */
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.roadmap-item:nth-child(2) .roadmap-image,
+.roadmap-item:nth-child(4) .roadmap-image {
+    height: 100%; /* 初始状态占满整个容器高度 */
+}
+
+/* Hover效果 */
+.roadmap-item:nth-child(2):hover .roadmap-content,
+.roadmap-item:nth-child(4):hover .roadmap-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.roadmap-item:nth-child(2):hover .roadmap-image,
+.roadmap-item:nth-child(4):hover .roadmap-image {
+    height: 280px;
+}
+
+@media (max-width: 1200px) {
+    .roadmap-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* 在移动端显示所有内容 */
+    .roadmap-item:nth-child(2) .roadmap-content,
+    .roadmap-item:nth-child(4) .roadmap-content {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+    
+    .roadmap-item:nth-child(2) .roadmap-image,
+    .roadmap-item:nth-child(4) .roadmap-image {
+        height: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .roadmap-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* FAQ 部分样式 */
+.faq {
+    padding: 100px 0;
+    background-color: #ffffff;
+}
+
+.accordion {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.accordion-item {
+    border-radius: 24px;
+    background: #f5f5f7;
+    overflow: hidden;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Hanken Grotesk Bold', sans-serif;
+    font-size: 1.1rem;
+    color: #0F0F11;
+    transition: all 0.3s ease;
+}
+
+.accordion-header:hover {
+    background: rgba(203, 227, 139, 0.1);
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 0 32px;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 500px;
+    padding: 0 32px 32px;
+}
+
+.accordion-content p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    padding-top: 24px;
+}
+
+/* Footer 样式 */
+.footer {
+    background: #f5f5f7;
+    padding: 80px 0 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.footer-brand {
+    flex: 0 0 40%;
+}
+
+.footer-brand .logo-container {
+    margin-bottom: 32px;
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+}
+
+.social-link {
+    color: #0F0F11;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-link:hover {
+    color: #8bc4e3;
+}
+
+/* 为img标签的SVG应用滤镜，使其颜色与内联SVG一致 */
+.social-link img {
+    filter: brightness(0); /* 将SVG转为黑色 */
+    transition: filter 0.3s ease;
+}
+
+.social-link:hover img {
+    filter: brightness(0) saturate(100%) invert(67%) sepia(13%) saturate(1352%) hue-rotate(166deg) brightness(94%) contrast(87%); /* 悬停时变为#8bc4e3颜色 */
+}
+
+.footer-links h3 {
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+    color: #0F0F11;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-nav a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #0F0F11;
+}
+
+.footer-bottom {
+    padding-top: 32px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .footer-brand {
+        flex: 0 0 100%;
+    }
+}
+
+/* 修改网页左上角光晕效果 */
+body::before, body::after {
+    content: '';
+    position: absolute; /* 从fixed改为absolute */
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* 第一个光晕 - 绿色 */
+body::before {
+    top: -200px;
+    left: -200px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(202, 227, 139, 0.25) 0%, rgba(202, 227, 139, 0.1) 40%, rgba(255, 255, 255, 0) 70%);
+}
+
+/* 第二个光晕 - 蓝色 */
+body::after {
+    top: -100px;
+    left: -50px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(139, 196, 227, 0.2) 0%, rgba(139, 196, 227, 0.08) 40%, rgba(255, 255, 255, 0) 70%);
+}
+
+/* 2. 按钮动效 */
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-primary {
+    box-shadow: 0 4px 15px rgba(203, 227, 139, 0.2);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(203, 227, 139, 0.3);
+}
+
+.btn-outline {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(203, 227, 139, 0.2);
+}
+
+/* 3. 卡片内容样式优化 */
+.card-content p {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+}
+
+/* 为特定的两行文本添加渐变点和减少行间距 */
+.card-large .card-content p {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 6px; /* 减少行间距 */
+}
+
+.card-large .card-content p::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #cae38b 0%, #8bc4e3 100%);
+}
+
+/* 重置特定卡片内容的样式 */
+.card-small .card-content p,
+.card-equal .card-content p {
+    padding-left: 0;
+}
+
+/* 确保只有card-large中的p有渐变点和左侧padding */
+.card-large .card-content p {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 6px;
+}
+
+.card-large .card-content p::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #cae38b 0%, #8bc4e3 100%);
+}
+
+/* 修改Decentralized Verification卡片的图片容器 */
+.card-equal .image-container {
+    background-image: url('assets/images/image-4.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent; /* 移除背景颜色 */
+    border-radius: 0; /* 移除圆角 */
+    min-height: 200px;
+}
+
+/* 修改Trustworthy Reports卡片的图片容器 */
+.card-equal:nth-child(2) .image-container {
+    background-image: url('assets/images/image-5.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent; /* 移除背景颜色 */
+    border-radius: 0; /* 移除圆角 */
+    min-height: 200px;
+}
+
+/* 修改User Uploads Content卡片的图片容器 */
+.card-equal:nth-child(3) .image-container {
+    background-image: url('assets/images/image-6.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent; /* 移除背景颜色 */
+    border-radius: 0; /* 移除圆角 */
+    min-height: 200px;
+}
+
+/* 调整Why Choose部分的标题位置 */
+.why-choose .section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* 移除why-content中的标题样式 */
+.why-content .section-title {
+    display: none;
+}
+
+.allocation-item {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* 与正面一致的divider颜色 */
+}
+
+.allocation-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* 使背面divider颜色与正面一致 */
+.allocation-item {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* 与正面一致的divider颜色 */
+}
+
+/* 增加翻转卡片的高度确保背面内容完全展示 */
+.tokenomics-row:last-child .token-item-large .token-item-inner {
+    min-height: 480px; /* 增加高度 */
+}
+
+/* 增大Utility of $BTT Tokens和Governance之间的间距 */
+.token-item h2 + .token-utilities {
+    margin-top: 20px; /* 在标题和列表之间添加间距 */
+}
+
+/* Tokenomics 卡片图片 - 改为cover */
+/* 第一行第一个card图片 */
+.tokenomics-row:first-child .token-item:first-child {
+    background-image: url('assets/images/image-7.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* 第一行第三个card图片 */
+.tokenomics-row:first-child .token-item:nth-child(3) {
+    background-image: url('assets/images/image-10.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* 第二行第一个card图片 */
+.tokenomics-row:last-child .token-item:first-child {
+    background-image: url('assets/images/image-8.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* 第二行第二个card图片 */
+.tokenomics-row:last-child .token-item:nth-child(2) {
+    background-image: url('assets/images/image-9.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* token-item-large渐变背景 */
+.tokenomics-row:last-child .token-item-large {
+    background: linear-gradient(90deg, #cae38b 0%, #8bc4e3 100%);
+}
+
+/* Roadmap 卡片图片 */
+/* Phase 1图片 */
+.roadmap-item:nth-child(1) .roadmap-image {
+    background-image: url('assets/images/image-r1.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Phase 2图片 */
+.roadmap-item:nth-child(2) .roadmap-image {
+    background-image: url('assets/images/image-r2.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Phase 3图片 */
+.roadmap-item:nth-child(3) .roadmap-image {
+    background-image: url('assets/images/image-r3.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Phase 4图片 */
+.roadmap-item:nth-child(4) .roadmap-image {
+    background-image: url('assets/images/image-r4.png');
+    background-size: cover;
+    background-position: center left;
+    background-repeat: no-repeat;
+}
+
+/* iPad版本特定样式 */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    /* 增加Token Distribution卡片高度 */
+    .tokenomics-row:last-child .token-item-large .token-item-inner {
+        min-height: 550px; /* 增加iPad版本的卡片高度 */
+    }
+}
+
+/* 手机版样式优化 */
+@media (max-width: 767px) {
+    /* 隐藏导航菜单，只保留logo和按钮 */
+    .nav-wrapper {
+        display: none !important;
+    }
+    
+    /* 字体大小优化 */
+    .hero-title, .features-title, .section-title, .banner-title {
+        font-size: 2rem;
+    }
+    
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-description, .banner-description, .feature-description {
+        font-size: 0.95rem;
+    }
+    
+    /* 卡片标题大小 */
+    .card h3, .feature-title, .item-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    /* 图片大小优化 */
+    .hero-image {
+        order: 2;
+        min-height: 300px;
+        width: 100%; /* 确保宽度100% */
+        background-image: url('assets/images/image-1.png') !important;
+        background-size: contain !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        margin: 0 auto !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .image-container {
+        min-height: 150px;
+    }
+    
+    /* 间距优化 */
+    .hero, .features, .how-it-works, .why-choose, .tokenomics, .roadmap, .faq {
+        padding: 60px 0;
+    }
+    
+    /* 确保卡片适合移动屏幕 */
+    .card, .token-item, .feature-card {
+        padding: 20px;
+    }
+    
+    /* 保留之前的手机版修复... */
+    /* 彻底禁用Core Features所有动画和滚动效果 */
+    .features {
+        overflow: visible !important;
+        position: static !important;
+    }
+    
+    .features-layout {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .features-intro {
+        position: static !important;
+        top: auto !important;
+        transform: none !important;
+        opacity: 1 !important;
+        margin-bottom: 30px;
+    }
+    
+    .features-cards {
+        position: static !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    
+    .feature-card {
+        position: static !important;
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+        z-index: 1 !important;
+    }
+    
+    /* 增加subtitle顶部间距 */
+    .features .subtitle {
+        margin-top: 30px;
+        display: block;
+        text-align: center;
+    }
+    
+    /* 其他手机版修复保持不变 */
+    .nav-fixed {
+        position: fixed !important;
+        top: 20px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: auto !important;
+        margin-left: 0 !important;
+        right: auto !important;
+    }
+    
+    .nav-wrapper {
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: auto !important;
+    }
+    
+    /* 2. 修复why-image不显示问题 */
+    .why-image {
+        min-height: 250px !important;
+        background-size: contain !important;
+        background-position: center !important;
+        width: 100% !important;
+        display: block !important;
+        visibility: visible !important;
+        margin: 0 auto 30px auto !important;
+        opacity: 1 !important;
+        background-image: url('assets/images/image-why.png') !important;
+    }
+    
+    /* 4. 增加Token Distribution高度和减小文字 */
+    .tokenomics-row:last-child .token-item-large .token-item-inner {
+        min-height: 550px;
+    }
+    
+    .token-item-inner h2,
+    .token-item-inner-front h2 {
+        font-size: 1.6rem;
+    }
+    
+    .token-detail .label,
+    .token-detail .value,
+    .allocation-item span {
+        font-size: 0.85rem;
+    }
+    
+    /* Hero改为上下结构 */
+    .hero {
+        display: flex;
+        flex-direction: column;
+        padding: 60px 0 0 0;
+        gap: 30px;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+        order: 1; /* 内容放在上面 */
+        text-align: center;
+    }
+    
+    .hero-image {
+        order: 2; /* 图片放在下面 */
+        min-height: 300px;
+        margin-top: 20px;
+    }
+    
+    .hero .btn-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
+
